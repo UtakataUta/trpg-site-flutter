@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'links.dart';
+import 'toolbar.dart';
+// import 'characters.dart';
+// import 'scenarios.dart';
+// import 'links.dart';
+import 'out_of_service.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,10 +33,15 @@ class MyApp extends StatelessWidget {
             ),
           )),
       home: const AboutPage(),
-      initialRoute: '/about',
+      initialRoute: '/',
       routes: {
         '/about': (context) => const AboutPage(),
-        '/links': (context) => const LinksPage(),
+        '/characters': (context) => const OutOfServicePage(),
+        // '/characters': (context) => const CharactersPage(),
+        '/scenarios': (context) => const OutOfServicePage(),
+        // '/scenarios': (context) => const ScenariosPage(),
+        '/links': (context) => const OutOfServicePage(),
+        // '/links': (context) => const LinksPage(),
       },
     );
   }
@@ -52,16 +61,7 @@ class AboutPage extends StatelessWidget {
     final TextTheme textTheme = theme.textTheme;
 
     return Scaffold(
-      appBar: AppBar(
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/links');
-            },
-            child: Text('Links', style: textTheme.bodyMedium),
-          ),
-        ],
-      ),
+      appBar: ToolBar(textTheme),
       body: Center(
         child: SizedBox(
           width: deviceWidth * 0.95,
