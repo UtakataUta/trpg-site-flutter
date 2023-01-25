@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'links.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,8 +24,16 @@ class MyApp extends StatelessWidget {
             bodySmall: TextStyle(
               color: Color.fromRGBO(0, 16, 17, 1),
             ),
+            bodyMedium: TextStyle(
+              color: Color.fromRGBO(255, 248, 240, 1),
+            ),
           )),
       home: const AboutPage(),
+      initialRoute: '/about',
+      routes: {
+        '/about': (context) => const AboutPage(),
+        '/links': (context) => const LinksPage(),
+      },
     );
   }
 }
@@ -38,7 +47,21 @@ class AboutPage extends StatelessWidget {
     final double deviceWidth = MediaQuery.of(context).size.width;
     final double deviceHeight = MediaQuery.of(context).size.height;
 
+    // text theme
+    final ThemeData theme = Theme.of(context);
+    final TextTheme textTheme = theme.textTheme;
+
     return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/links');
+            },
+            child: Text('Links', style: textTheme.bodyMedium),
+          ),
+        ],
+      ),
       body: Center(
         child: SizedBox(
           width: deviceWidth * 0.95,
