@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
             ),
             bodyMedium: TextStyle(
               color: Color.fromRGBO(255, 248, 240, 1),
+              fontFamily: 'MochiyPopPOne',
             ),
           )),
       home: const AboutPage(),

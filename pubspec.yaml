@@ -90,6 +90,11 @@ flutter:
         - asset: assets/fonts/Stick/Stick-Regular.ttf
           weight: 400
 
+    - family: MochiyPopPOne
+      fonts: 
+        - asset: assets/fonts/MochiyPopPOne/MochiyPopPOne-Regular.ttf
+          weight: 400
+
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
