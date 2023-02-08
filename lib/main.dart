@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'toolbar.dart';
 // import 'characters.dart';
 // import 'scenarios.dart';
-// import 'links.dart';
+import 'links.dart';
 import 'out_of_service.dart';
 
 void main() {
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
             ),
             bodyMedium: TextStyle(
               color: Color.fromRGBO(255, 248, 240, 1),
+              fontFamily: 'MochiyPopPOne',
             ),
           )),
       home: const AboutPage(),
@@ -40,8 +41,7 @@ class MyApp extends StatelessWidget {
         // '/characters': (context) => const CharactersPage(),
         '/scenarios': (context) => const OutOfServicePage(),
         // '/scenarios': (context) => const ScenariosPage(),
-        '/links': (context) => const OutOfServicePage(),
-        // '/links': (context) => const LinksPage(),
+        '/links': (context) => const LinksPage(),
       },
     );
   }
